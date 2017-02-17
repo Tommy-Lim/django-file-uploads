@@ -2,20 +2,28 @@
 
 {% block content %}
 <h1>Uploader</h1>
-<form action="/" method="POST" enctype="multipart/form-data">
-  {% csrf_token %}
-  <input type="file" name="srt_file">
-  <input type="submit">
-</form>
-
-<pre>{{text}}</pre>
-
-{% for subtitle in subtitle %}
-  <div clas="well">
-    <strong>{{subtitle.duration}}</strong>
-    <p>{{subtitle.line1}}</p>
-    <p>{{subtitle.line2}}</p>
+<div class="row">
+  <div class="col-xs-12">
+    <form action="/" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="file" name="srt_file">
+      <input type="submit">
+    </form>
   </div>
-{% endfor %}
+</div>
+
+<hr />
+
+<pre class="subtitle-box">{{text}}</pre>
+
+<div class="subtitle-box well">
+  {% for subtitle in subtitle %}
+    <div class="">
+      <strong>{{subtitle.duration}}</strong>
+      <p>{{subtitle.line1}}</p>
+      <p>{{subtitle.line2}}</p>
+    </div>
+  {% endfor %}
+</div>
 
 {% endblock %}
