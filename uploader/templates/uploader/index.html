@@ -10,4 +10,12 @@
 
 <pre>{{text}}</pre>
 
+{% for subtitle in subtitle %}
+  <div clas="well">
+    <strong>{{subtitle.duration}}</strong>
+    <p>{{subtitle.line1}}</p>
+    <p>{{subtitle.line2}}</p>
+  </div>
+{% endfor %}
+
 {% endblock %}

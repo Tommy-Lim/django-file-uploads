@@ -39,13 +39,13 @@ def handle_uploaded_file(file, name):
         line1 = original_file.readline().strip()
         line1 = line1.replace("\"", "\\\"")
         result += f'"line1": "{line1}",\n'
-        result_array[count][line1] = line1
+        result_array[count]["line1"] = line1
 
         line2 = original_file.readline().strip()
         line2 = line2.replace("\"", "\\\"")
         if line2 is not '':
             result += f'"line2": "{line2}"\n'
-            result_array[count][line2] = line2
+            result_array[count]["line2"] = line2
             result += '},\n'
             original_file.readline()
             line = original_file.readline()
